@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="drukarnia_db" uuid="d20e2289-d13b-4be3-afd8-0756e457eb36">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Krzysiek\Desktop\ProjektDj\projektAPI\drukarnia_db</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="drukarnia_db [2]" uuid="7f3240f1-3643-4351-85a5-4f5472de15c8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\burza\PycharmProjects\-PSI-\Projekt\ProjektDj\projektAPI\drukarnia_db</jdbc-url>
+    </data-source>
+  </component>
+</project>
