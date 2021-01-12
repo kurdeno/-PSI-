@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4109eff-8728-4369-8910-3d598ccf33c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plik.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cw1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cw1/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e4109eff-8728-4369-8910-3d598ccf33c4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +13,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
+            <state relative-caret-position="773">
               <caret line="120" column="14" lean-forward="true" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
             </state>
           </provider>
@@ -73,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-2" />
     <option name="y" value="40" />
     <option name="width" value="1297" />
@@ -100,6 +95,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -179,15 +175,15 @@
       <option name="presentableId" value="Default" />
       <updated>1604918208168</updated>
       <workItem from="1604918209703" duration="7268000" />
-      <workItem from="1604929738398" duration="399000" />
+      <workItem from="1604929738398" duration="756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7667000" />
+    <option name="totallyTimeSpent" value="8024000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
@@ -195,7 +191,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -237,7 +233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
+        <state relative-caret-position="773">
           <caret line="120" column="14" lean-forward="true" selection-start-line="120" selection-start-column="14" selection-end-line="120" selection-end-column="14" />
         </state>
       </provider>
