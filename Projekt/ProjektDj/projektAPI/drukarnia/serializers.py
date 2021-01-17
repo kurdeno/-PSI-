@@ -10,7 +10,6 @@ def dlugosc_nr_telefonu(tel):
 
 
 class KlientSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Klient
         fields = ['imie', 'nazwisko', 'email', 'nr_telefonu']
@@ -28,12 +27,11 @@ class KlientSerializer(serializers.ModelSerializer):
     #         nr_telefonu=validated_data['nr_telefonu']
     #     )
 
+
 class PracownikSerializer(serializers.ModelSerializer):
-
-
     class Meta:
         model = Pracownik
-        fields = ['imie', 'nazwisko','pesel', 'email', 'nr_telefonu']
+        fields = ['imie', 'nazwisko', 'pesel', 'email', 'nr_telefonu']
 
     # imie = serializers.CharField(max_length=45)
     # nazwisko = serializers.CharField(max_length=45)
@@ -52,7 +50,8 @@ class ZamowienieSerializer(serializers.ModelSerializer):
     # data = serializers.DateField()
     class Meta:
         model = Zamowienie
-        fields = ['status', 'data']
+        fields = ['status', 'data','klient','pracownik']
+
     # klient = serializers.ForeignKey(Klient, on_delete=models.CASCADE)
     # pracownik = serializers.ForeignKey(Pracownik, on_delete=models.CASCADE)
 
@@ -77,10 +76,11 @@ class OfertaSerializer(serializers.ModelSerializer):
 
 
 class ProduktSerializer(serializers.ModelSerializer):
-    #ilosc = serializers.IntegerField()
+    # ilosc = serializers.IntegerField()
     class Meta:
         model = Produkt
-        fields = ['ilosc']
+        fields = ['ilosc', 'oferta', 'zamowienie']
+
     # oferta = models.ForeignKey(Oferta, on_delete=models.CASCADE)
     # zamowienie = models.ForeignKey(Zamowienie, on_delete=models.CASCADE)
 

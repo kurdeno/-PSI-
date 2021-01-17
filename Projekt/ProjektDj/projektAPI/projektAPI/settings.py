@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drukarnia.apps.DrukarniaConfig'
+    'drukarnia.apps.DrukarniaConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
