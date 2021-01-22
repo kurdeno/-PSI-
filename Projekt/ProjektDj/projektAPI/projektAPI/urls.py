@@ -20,5 +20,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', include('drukarnia.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
 ]

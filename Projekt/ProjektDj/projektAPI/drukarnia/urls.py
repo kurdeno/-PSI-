@@ -14,14 +14,4 @@ urlpatterns = [
     path('oferty', views.OfertaList.as_view(), name=views.OfertaList.name),
     path('oferty/<int:pk>', views.OfertaDetail.as_view(), name=views.OfertaDetail.name),
     path('', views.ApiRoot.as_view(), name=views.ApiRoot.name),
-    # path('book-categories',views.BookCategoryList.as_view(), name=views.BookCategoryList.name),
-    # path('book-categories/<int:pk>',views.BookCategoryDetail.as_view(), name=views.BookCategoryDetail.name),
-    # path('books', views.BookList.as_view(), name=views.BookList.name),
-    # path('books/<int:pk>', views.BookDetail.as_view(), name=views.BookDetail.name),
-    # path('clients/<int:pk>', views.ClientDetail.as_view(), name=views.ClientDetail.name),
-    # path('orders', views.OrderList.as_view(), name=views.OrderList.name),
-    # path('orders/<int:pk>', views.OrderDetail.as_view(), name=views.OrderDetail.name),
-    # path('users', views.UserList.as_view(), name=views.UserList.name),
-
-    #path('', views.ApiRoot.as_view(), name=views.ApiRoot.name),
     ]

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from datetime import date
 from .models import *
+from django.contrib.auth.models import User
 
 
 def dlugosc_nr_telefonu(tel):
@@ -88,3 +89,15 @@ class ProduktSerializer(serializers.ModelSerializer):
         if ilosc < 0:
             raise serializers.ValidationError("Ilosc nie może być ujemna.")
         return ilosc
+    #
+    # class UserBookSerializer(serializers.HyperlinkedModelSerializer):
+    #     class Meta:
+    #         model = Produkt
+    #         fields = ['url', 'title']
+    #
+    # class UserSerializer(serializers.HyperlinkedModelSerializer):
+    #     books = UserBookSerializer(many=True, read_only=True)
+    #
+    #     class Meta:
+    #         model = User
+    #         fields = ['url', 'pk', 'username', 'books']
