@@ -13,5 +13,11 @@ urlpatterns = [
     path('produkty/<int:pk>', views.ProduktDetail.as_view(), name=views.ProduktDetail.name),
     path('oferty', views.OfertaList.as_view(), name=views.OfertaList.name),
     path('oferty/<int:pk>', views.OfertaDetail.as_view(), name=views.OfertaDetail.name),
+    path('users', views.UserList.as_view(), name=views.UserList.name),
+    path('users/<int:pk>', views.UserDetail.as_view(), name=views.UserDetail.name),
+
+
     path('', views.ApiRoot.as_view(), name=views.ApiRoot.name),
+
+
     ]
