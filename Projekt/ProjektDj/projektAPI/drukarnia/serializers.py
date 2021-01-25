@@ -13,16 +13,13 @@ def dlugosc_nr_telefonu(tel):
 class KlientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Klient
-        fields = ['pk','imie', 'nazwisko', 'email', 'nr_telefonu', 'url']
-
+        fields = ['pk', 'imie', 'nazwisko', 'email', 'nr_telefonu', 'url']
 
 
 class PracownikSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pracownik
-        fields = ['pk','imie', 'nazwisko', 'pesel', 'email', 'nr_telefonu', 'url']
-
-
+        fields = ['pk', 'imie', 'nazwisko', 'pesel', 'email', 'nr_telefonu', 'url']
 
     def validate_pesel(self, pesel):
         if len(pesel) != 11:
@@ -31,12 +28,14 @@ class PracownikSerializer(serializers.ModelSerializer):
 
 
 class ZamowienieSerializer(serializers.ModelSerializer):
+    klient = serializers.SlugRelatedField(queryset=Klient.objects.all(),
+                                          slug_field='nazwisko')
+    pracownik = serializers.SlugRelatedField(queryset=Pracownik.objects.all(),
+                                             slug_field='nazwisko')
 
     class Meta:
         model = Zamowienie
-        fields = ['pk','status', 'data', 'klient', 'pracownik', 'url']
-
-
+        fields = ['pk', 'status', 'data', 'klient', 'pracownik', 'url']
 
     def validate_data(self, d):
         if d > date.today():
@@ -47,9 +46,7 @@ class ZamowienieSerializer(serializers.ModelSerializer):
 class OfertaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Oferta
-        fields = ['pk','nazwa', 'cena', 'url']
-
-
+        fields = ['pk', 'nazwa', 'cena', 'url']
 
     def validate_cena(self, cena):
         if cena < 0:
@@ -58,12 +55,14 @@ class OfertaSerializer(serializers.ModelSerializer):
 
 
 class ProduktSerializer(serializers.ModelSerializer):
+    oferta = serializers.SlugRelatedField(queryset=Oferta.objects.all(),
+                                          slug_field='nazwa')
+    zamowienie = serializers.SlugRelatedField(queryset=Zamowienie.objects.all(),
+                                              slug_field='data')
 
     class Meta:
         model = Produkt
-        fields = ['pk','ilosc', 'oferta', 'zamowienie', 'url']
-
-
+        fields = ['pk', 'ilosc', 'oferta', 'zamowienie', 'url']
 
     def validate_ilosc(self, ilosc):
         if ilosc < 0:
@@ -74,4 +73,4 @@ class ProduktSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['pk', 'username','url']
+        fields = ['pk', 'username', 'url']

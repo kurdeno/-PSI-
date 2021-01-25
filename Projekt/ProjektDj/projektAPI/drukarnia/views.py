@@ -4,7 +4,7 @@ from rest_framework.reverse import reverse
 from rest_framework.response import Response
 from django.http import Http404
 from rest_framework.views import APIView
-from django_filters import AllValuesFilter, DateTimeFilter, NumberFilter, FilterSet
+from django_filters import AllValuesFilter, NumberFilter, FilterSet
 from .models import Klient, Pracownik, Zamowienie, Oferta, Produkt
 from .serializers import KlientSerializer, PracownikSerializer, ZamowienieSerializer, OfertaSerializer, \
     ProduktSerializer, UserSerializer
@@ -95,7 +95,7 @@ class OfertaFilter(FilterSet):
 
     class Meta:
         model = Oferta
-        fields = ['min_price', 'max_price', 'nazwa_oferty']
+        fields = ['nazwa_oferty', 'min_price', 'max_price']
 
 
 class OfertaList(generics.ListCreateAPIView):
@@ -104,7 +104,7 @@ class OfertaList(generics.ListCreateAPIView):
     name = 'oferty'
     filterset_class = OfertaFilter
     ordering_fields = ['nazwa', 'cena']
-    filterset_fields = ['nazwa', 'cena']
+
     search_fields = ['nazwa']
 
 

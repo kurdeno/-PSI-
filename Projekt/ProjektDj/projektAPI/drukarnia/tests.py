@@ -38,20 +38,20 @@ class OfertaTest(APITestCase):
         print(response_two)
         assert response_two.status_code == status.HTTP_400_BAD_REQUEST
 
-    # def test_filter_oferta_by_name(self):
-    #     oferta_name_one = 'B4'
-    #     oferta_name_two = 'A4'
-    #     oferta_price_one = 1
-    #     oferta_price_two = 2
-    #     self.post_oferta(oferta_name_one,oferta_price_one)
-    #     self.post_oferta(oferta_name_two,oferta_price_two)
-    #     filter_by_name = {'nazwa': oferta_name_one}
-    #     url= '{0}?{1}'.format(reverse(views.OfertaList.name), urlencode(filter_by_name))
-    #     print(url)
-    #     response = self.client.get(url, format='json')
-    #     assert response.status_code == status.HTTP_200_OK
-    #     assert response.data['count'] == 1
-    #     assert response.data['results'][0]['nazwa'] == oferta_name_one
+    def test_filter_oferta_by_name(self):
+        oferta_name_one = 'B4'
+        oferta_name_two = 'A4'
+        oferta_price_one = 1
+        oferta_price_two = 2
+        self.post_oferta(oferta_name_one, oferta_price_one)
+        self.post_oferta(oferta_name_two, oferta_price_two)
+        filter_by_name = {'nazwa_oferty': oferta_name_one, 'max_cena': 1.5, 'min_cena': .5}
+        url = '{0}?{1}'.format(reverse(views.OfertaList.name), urlencode(filter_by_name))
+        print(url)
+        response = self.client.get(url, format='json')
+        assert response.status_code == status.HTTP_200_OK
+        assert response.data['count'] == 1
+        assert response.data['results'][0]['nazwa'] == oferta_name_one
 
     def test_get_oferta_collection(self):
         new_oferta_name = 'A5'
@@ -169,7 +169,7 @@ class KlientTest(APITestCase, TestCase):
         eml = '3@dad.pl'
         tel = 134141511
         response = self.post_klient(fname, lname, eml, tel)
-        url = urls.reverse(views.KlientDetail.name,None,{response.data['pk']})
+        url = urls.reverse(views.KlientDetail.name, None, {response.data['pk']})
         get_response = self.client.patch(url, format='json')
         assert get_response.status_code == status.HTTP_200_OK
         assert get_response.data['imie'] == fname
