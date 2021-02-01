@@ -32,6 +32,9 @@ class ZamowienieSerializer(serializers.ModelSerializer):
                                           slug_field='nazwisko')
     pracownik = serializers.SlugRelatedField(queryset=Pracownik.objects.all(),
                                              slug_field='nazwisko')
+    # klient = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='klient-detail')
+    # pracownik = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='pracownik-detail')
+    status = serializers.ChoiceField(choices=Zamowienie.STATUS_CHOICES)
 
     class Meta:
         model = Zamowienie
@@ -59,6 +62,9 @@ class ProduktSerializer(serializers.ModelSerializer):
                                           slug_field='nazwa')
     zamowienie = serializers.SlugRelatedField(queryset=Zamowienie.objects.all(),
                                               slug_field='data')
+
+    # oferta = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='oferta-detail')
+    # zamowienie = serializers.HyperlinkedRelatedField(many=False, read_only=True, view_name='zamowienie-detail')
 
     class Meta:
         model = Produkt

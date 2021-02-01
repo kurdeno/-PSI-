@@ -95,7 +95,7 @@ class OfertaFilter(FilterSet):
 
     class Meta:
         model = Oferta
-        fields = ['nazwa_oferty', 'min_price', 'max_price']
+        fields = [ 'nazwa_oferty','min_price', 'max_price']
 
 
 class OfertaList(generics.ListCreateAPIView):

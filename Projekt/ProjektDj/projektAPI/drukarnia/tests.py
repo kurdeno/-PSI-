@@ -43,10 +43,10 @@ class OfertaTest(APITestCase):
         oferta_name_two = 'A4'
         oferta_price_one = 1
         oferta_price_two = 2
-        self.post_oferta(oferta_name_one, oferta_price_one)
-        self.post_oferta(oferta_name_two, oferta_price_two)
-        filter_by_name = {'nazwa_oferty': oferta_name_one, 'max_cena': 1.5, 'min_cena': .5}
-        url = '{0}?{1}'.format(reverse(views.OfertaList.name), urlencode(filter_by_name))
+        self.post_oferta(oferta_name_one,oferta_price_one)
+        self.post_oferta(oferta_name_two,oferta_price_two)
+        filter_by_name = {'nazwa_oferty': oferta_name_one,'max_cena':1.5,'min_cena':.5}
+        url= '{0}?{1}'.format(reverse(views.OfertaList.name), urlencode(filter_by_name))
         print(url)
         response = self.client.get(url, format='json')
         assert response.status_code == status.HTTP_200_OK
@@ -169,7 +169,7 @@ class KlientTest(APITestCase, TestCase):
         eml = '3@dad.pl'
         tel = 134141511
         response = self.post_klient(fname, lname, eml, tel)
-        url = urls.reverse(views.KlientDetail.name, None, {response.data['pk']})
+        url = urls.reverse(views.KlientDetail.name,None,{response.data['pk']})
         get_response = self.client.patch(url, format='json')
         assert get_response.status_code == status.HTTP_200_OK
         assert get_response.data['imie'] == fname
